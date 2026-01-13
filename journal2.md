@@ -503,27 +503,5 @@ plt.show()
 - build active learning loop so kingdom identifies high-value escalation opportunities and improves emulator training data
 - extend conformal prediction to multivariate outputs (spatial rasters, not just scalars)
 
----
-
-## technical appendix: code repository structure
-
-```
-kingdom/
-├── core/
-│   ├── scm.py                 # structural causal model graph
-│   ├── screening_engine.py     # fast response functions
-│   ├── emulator_service.py     # sklearn + conformal prediction
-│   └── escalation_router.py    # routing logic (this entry)
-├── data/
-│   ├── datasets.py             # 76 dataset manifests (D01-D76)
-│   └── harmonization/          # preprocessing pipeline
-├── validation/
-│   ├── test_voi_logic.py       # unit tests for routing
-│   └── calibration_study.py    # empirical cost-loss analysis
-└── docs/
-    └── escalation_spec.md      # full technical specification
-```
-
----
 
 **meta note:** this journal entry is 1200+ lines of technical depth because the routing problem is genuinely complex and the stakes are high. dutch stakeholders deserve explanations they can defend to their constituents, and that requires precision, not narrative hand-waving.
